@@ -1,0 +1,29 @@
+\documentclass[10pt]{article}
+
+% all the configurations for the document
+\input{template.tex}
+
+
+
+% personal data for the cv header
+\name{John Smith}
+\personalinfo{
+  \email{johnsmith@gmail.com}
+  \webpage{johnsmith.github.io}
+  \linkedin{johnsmith}
+  \github{johnsmith}
+  \gitlab{johnsmith}
+  \datacamp{johnsmith} 
+}
+
+\begin{document}
+
+\makecvheader
+
+\input{sections/en_professional.tex}
+\input{sections/en_academic.tex}
+\input{sections/en_education.tex}
+\input{sections/en_courses.tex}
+\input{sections/en_achievements.tex}
+
+\end{document}
