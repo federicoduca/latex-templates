@@ -1,0 +1,58 @@
+\ProvidesPackage{ArticlesTitles}[V0.0]
+\RequirePackage{graphicx}
+
+\newcommand*{\university}[1]{\gdef\@university{#1}}
+\newcommand*{\career}[1]{\gdef\@career{#1}}
+\newcommand*{\class}[1]{\gdef\@class{#1}}
+\newcommand*{\subtitle}[1]{\gdef\@subtitle{#1}}
+
+\renewcommand*{\maketitle}{%
+    \begin{titlepage}
+        \centering
+        {\LARGE \bfseries \@title \par}
+        \vspace{1ex}
+        \ifdef{\@subtitle}{
+                \vspace{-.5ex}
+                {\LARGE \itshape \@subtitle} \par 
+                \vspace{1ex}
+            }{}
+        {\large \bfseries \@class \par}
+        {\large \@university \par}
+        \vspace{-.8ex}
+        \large{\@career \par}
+        \vspace{.5ex}
+        {\large \@author \par}
+        \ifdef{\@date}
+            {\@date \par}
+            {}
+        \bigskip
+    \end{titlepage}
+}
+
+% %% PAGE: HEADER / FOOTER
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{28pt}
+\lhead{\@class, \@title}
+\rhead{\includegraphics[width=1cm]{logo_utdt.png}}
+
+%% PAGE: SECTIONS
+\usepackage{titlesec}
+
+%% PAGE: SECTIONS AS FOR HOMEWORK
+\titleformat{\section}
+% [] % [shape]
+{\normalfont\large\bfseries} % {format}
+{Exercise \thesection. \hfill} % {label}
+{0em} % {sep}
+{\vspace{2pt} \titlerule} % {before-code}
+% [] % [after-code]
+
+%% SUBSECTION AS ALPHABETIC ITEMS
+\renewcommand{\thesubsection}
+{\alph{subsection})}
+
+\titlespacing*{\subsection}
+{0pt}
+{5.5ex plus 1ex minus .2ex}
+{4.3ex plus .2ex}
