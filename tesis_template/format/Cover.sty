@@ -1,0 +1,39 @@
+% Copyright note: This package defines how titles should
+% be typeset at the columbidae University
+% Please check for updates
+\ProvidesPackage{./format//Cover}[v3.14]
+\RequirePackage{graphicx}
+
+\newcommand*{\university}[1]{\gdef\@university{#1}}
+\newcommand*{\career}[1]{\gdef\@career{#1}}
+\newcommand*{\tutors}[1]{\gdef\@tutors{#1}}
+
+\renewcommand*{\maketitle}{%
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.9\linewidth]{utdt-color-alta-rgb.jpg}\par
+	\vspace{2cm}
+	{\Large\scshape\@career\par}
+    \vspace{2cm}
+    {\LARGE\scshape\@title\par}
+    \vspace{1cm}
+    {\large\textbf{TESIS} \par}
+    \vspace{2cm}
+    {\large\@author\par}
+    \vspace{0.5cm}
+    {\large\@date\par}
+	\vspace{5cm}
+    {\raggedright \large Tutoría: \@tutors\unskip\strut\par}
+
+\end{titlepage}
+}
+
+%%%%%%%% SECTION
+\usepackage{appendix}    % adicionales para apéndices
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{16pt}
+\usepackage{emptypage}	% clear double page without number
+
+
+\endinput

@@ -1,0 +1,162 @@
+%%%%%%%% PAGE %%%%%%%%
+
+%% PAGE: SIZE
+\usepackage{geometry}
+\geometry{top=3cm,bottom=3cm}
+
+%%%%%%%% TEXT %%%%%%%%
+
+%% TEXT: FONTS
+\usepackage[english,spanish]{babel}        % set English format
+% \usepackage{libertine}  % XeLaTex 'Spanish accents'
+\usepackage[T1]{fontenc}  % https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+% \usepackage{fontspec}
+
+%% TEXT: COLOR
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+%% TEXT: PARAGRAPH SPACES
+% \setlength{\parindent}{0ex}
+\setlength{\parskip}{1.5ex}
+\renewcommand{\baselinestretch}{1.2}
+
+%% TEXT: ITEMIZE
+\usepackage{enumitem}        % enumerate
+%    \setlist[itemize,1]{label=$\mathbf{\bullet}$}
+%    \setlist[itemize,2]{label=$\mathbf{\circ}$}
+%    \setlist[itemize]{noitemsep, topsep=0pt}
+
+%% TEXT: TABLES
+\usepackage{tabularx}
+\usepackage{booktabs}   % nice tabs
+\usepackage{multirow}   % multiple rows in tables
+\usepackage{array}      % config tables format
+
+%% TEXT: FIGURES
+% \usepackage{subcaption}
+%\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{float}  % [H] fixed figures
+\usepackage{svg}    % insert vector figures
+% \usepackage{tikz}       % gráficos de tikz
+% \usepackage[mode=buildnew]{standalone}
+
+%% TEXT: LINKS
+% Warning: choose wisely your package but only one
+%\usepackage{varioref}
+%\usepackage{cleveref}
+\usepackage[linktocpage]{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+}
+
+%%%%%%%% BIB %%%%%%%%
+\usepackage[nonamebreak]{natbib}
+\bibliographystyle{plain}
+\setcitestyle{numbers,square,comma}
+\usepackage{url}         % permite URL en bib
+% \urlstyle{same}        % tipografía de la URL
+% \usepackage{breakurl}
+
+%%%%%%%% MATH %%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{textcomp, gensymb}  % \degree y otros símbolos
+\usepackage{siunitx} % unidades en el SI
+\sisetup{
+    %  math-rm=\mathtt
+    % binary-units = true            % Binary data is expressed in units of bits and bytes
+    ,list-final-separator = { \translate{y} }
+    ,list-pair-separator = { \translate{y} }
+    ,range-phrase = { \translate{a} }
+    ,output-decimal-marker = {,}
+}
+
+%%%%%%%% CODE %%%%%%%%
+\usepackage{listings}
+\colorlet{coding_color}{white}
+\colorlet{number_color}{gray}
+\colorlet{string_color}{orange}
+\colorlet{backgr_color}{darkgray}
+\colorlet{keywrd_color}{cyan}
+
+% \lstdefinestyle{mystyle}{
+%     backgroundcolor=\color{backgr_color},
+%     commentstyle=\color{coding_color},
+%     keywordstyle=\color{keywrd_color},
+%     numberstyle=\tiny\color{number_color},
+%     stringstyle=\color{string_color},
+%     basicstyle=\ttfamily\footnotesize,
+%     breakatwhitespace=false,
+%     breaklines=true,
+%     captionpos=b,
+%     keepspaces=true,
+%     numbers=left,
+%     numbersep=5pt,
+%     showspaces=false,
+%     showstringspaces=false,
+%     showtabs=false,
+%     tabsize=2
+% }
+% \lstset{style=mystyle}
+
+%%%%%%%% THESIS %%%%%%%%
+\usepackage[nottoc]{tocbibind}
+
+\newenvironment{preliminary}{
+    \cleardoublepage
+    \pagestyle{plain}
+    \pagenumbering{roman}
+    \frontmatter
+}{
+    \cleardoublepage
+    \pagenumbering{arabic}
+    \mainmatter
+}
+
+\newenvironment{postliminary}{
+    \cleardoublepage%
+    \pagestyle{empty}
+}{
+    \pagestyle{fancy}
+}
+
+\newenvironment{dedication}{
+    \cleardoublepage
+    \pagestyle{plain}
+    \vspace*{\stretch{1}}% some space at the top
+    \itshape             % the text is in italics
+    \raggedleft          % flush to the right margin
+    \addcontentsline{toc}{chapter}{Dedicatoria}
+}{
+    \par                 % end the paragraph
+    \vspace{\stretch{3}} % space at bottom is three times that at the top
+    \cleardoublepage
+}
+
+%% NAMES AND REFERENCES
+% \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+% \renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\newcommand{\reffig}[1]{Figura~\ref{#1}}
+\newcommand{\reftab}[1]{Tabla~\ref{#1}}
+\renewcommand{\refeq}[1]{Ecuación~(\ref{#1})}
+
+\addto\captionsspanish{
+    \def\contentsname{Índice de Contenidos}
+    \def\listfigurename{Índice de Figuras}
+    \def\listtablename{Índice de Tablas}
+    \def\figurename{Figura}
+    \def\tablename{Tabla}
+    \def\abstractname{Resumen}
+    \def\abstractnameeng{Abstract}
+    \def\bibname{Bibliografía}
+}
+

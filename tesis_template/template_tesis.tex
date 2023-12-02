@@ -1,0 +1,67 @@
+\documentclass[
+    a4paper,
+    12pt,
+    oneside  % remove this if you want to print 
+]{book}
+
+%% add format to path to use ArticlesTitles
+\makeatletter
+\def\input@path{{./format/}}
+\makeatother
+
+%% add packages used in general articles
+\input{header.tex}
+
+%% add cover and section titles format
+\graphicspath{{./format}{./figures/}}
+\usepackage{Cover}
+
+\usepackage{silence}
+\WarningsOff
+
+%% names for titles
+\university{Universidad Torcuato Di Tella}
+\career{Master in Management + Analytics}
+\tutors{Tutor 1, Tutor 2}
+
+\title{Trabajo Práctico}
+\author{Federico Duca}
+\date{\today}
+
+%% remove this
+\usepackage{lipsum}
+
+\begin{document}
+
+\maketitle
+
+\begingroup
+\pagestyle{empty}
+\cleardoublepage
+\endgroup
+
+\begin{preliminary}
+    \input{caps/00_resumen.tex}
+    \input{caps/00_agradecimientos.tex}
+    \listoftables
+    \listoffigures
+    \tableofcontents
+\end{preliminary}
+
+\include{caps/01_introduccion.tex}
+\include{caps/02_datos.tex}
+\include{caps/03_metodologia.tex}
+\include{caps/04_resultados.tex}
+\include{caps/05_conclusiones.tex}
+
+% \section*{Referencias}
+% [Incluir el listado de referencias usando las normas \href{https://apastyle.apa.org/style-grammar-guidelines/references}{APA}]
+
+\nocite{*}
+\bibliography{bib/example}
+
+\appendix
+\include{caps/A_extras.tex}
+
+
+\end{document}
