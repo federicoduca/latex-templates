@@ -7,13 +7,23 @@
 %%%%%%%% TEXT %%%%%%%%
 
 %% TEXT: FONTS
-\usepackage{babel}  	  % set English format
+\usepackage[english,spanish]{babel}        % set English format
 % \usepackage{libertine}  % XeLaTex 'Spanish accents'
 \usepackage[T1]{fontenc}  % https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 % \usepackage{fontspec}
 
 %% TEXT: COLOR
 \usepackage{xcolor}
+\usepackage{tcolorbox}
+\newtcolorbox{consigna}{
+    colback=gray!5!white,
+    colframe=blue!75!black,
+    arc=0pt,
+    boxrule=1pt,
+    fonttitle=\bfseries,
+    fontupper=\slshape,
+    title=Consigna
+}
 
 %% TEXT: PARAGRAPH SPACES
 \setlength{\parindent}{0ex}
@@ -46,15 +56,17 @@
 \usepackage{hyperref}
 % configuration for links (personal choice)
 \hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
+    colorlinks=false,
+    linkcolor=darkgray!50!blue,
     filecolor=magenta,
     urlcolor=cyan,
+    citecolor=green,
 }
 
 %% TEXT: REFERENCES
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+% \renewcommand{\theequation}{\ttfamily\theparentequation}
 
 % compact cites so is not different paragraphs
 \let\stref\ref
@@ -72,7 +84,7 @@
 
 %%%%%%%% EXTRA %%%%%%%%
 
-%% BIBLIOGRAFIA
+%% BIBLIOGRAFÍA
 % \usepackage[square,super]{natbib} \usepackage{bibentry}
 
 %% MATH:

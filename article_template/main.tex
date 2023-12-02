@@ -8,33 +8,37 @@
 %% add packages used in general articles
 \input{header.tex}
 
-%% set lenguage
-\setlanguage{spanish}
-
-% %% add cover and section titles format
+%% add cover and section titles format
 \graphicspath{{./format}{./figures/}}
 \usepackage[]{ArticlesTitles}
 
-% %% names for titles
+%% names for titles
 \university{Universidad Torcuato Di Tella}
-\career{Master in Managment + Analytic}
-\class{Ventas y Marketing}
+\career{Master in Management + Analytics}
+\class{Optimización para la Toma de Decisiones}
 
-\title{Trabajo Final}
-\subtitle{Diseño de Producto o Servicio}
+\title{Trabajo Práctico}
+\subtitle{Parte 1}
 \author{Federico Duca}
-% \date{\today}
+\date{\today}
+
+%% remove this 
+\usepackage{lipsum}
 
 %% begin document
 \begin{document}
 
 \maketitle
+\tableofcontents
+\clearpage
 
-\section{}
+\section{Primer título}
+\lipsum[1-5]
 
 \newpage
 
-\section{hola}
+\section{Segundo título}
+\lipsum[1-5]
 
 \end{document}
 
